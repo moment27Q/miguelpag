@@ -1,0 +1,209 @@
+.pageHeader {
+  background-color: var(--color-dark);
+  padding: 80px 0 64px;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.pageSubtitle {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+.servicesSection {
+  background-color: var(--color-black);
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+  background-color: var(--color-dark);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color var(--transition);
+}
+
+.serviceRow:hover {
+  border-color: rgba(245, 194, 0, 0.3);
+}
+
+.serviceRow.reversed {
+  direction: rtl;
+}
+
+.serviceRow.reversed > * {
+  direction: ltr;
+}
+
+.serviceIcon {
+  background-color: rgba(245, 194, 0, 0.04);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.serviceRow.reversed .serviceIcon {
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.iconWrap {
+  color: var(--color-primary);
+}
+
+.serviceIconImg {
+  padding: 0;
+  overflow: hidden;
+}
+
+.serviceImgWrap {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  height: 100%;
+}
+
+.serviceContent {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.serviceDesc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+.brandsSection {
+  background-color: var(--color-dark);
+}
+
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.brandCard {
+  background-color: var(--color-black);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 36px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.brandCard:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(245, 194, 0, 0.04);
+}
+
+.brandName {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.375rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.06em;
+  transition: color var(--transition);
+}
+
+.brandCard:hover .brandName {
+  color: var(--color-primary);
+}
+
+.brandNote {
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+}
+
+.cta {
+  background-color: var(--color-primary);
+  padding: 80px 0;
+}
+
+.ctaInner {
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  color: var(--color-black);
+  margin-bottom: 12px;
+}
+
+.ctaSub {
+  font-size: 1rem;
+  color: rgba(10, 10, 10, 0.65);
+}
+
+.cta .ctaInner a {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.cta .ctaInner a:hover {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+@media (max-width: 1024px) {
+  .brandsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceRow,
+  .serviceRow.reversed {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .serviceIcon {
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 32px;
+  }
+
+  .serviceRow.reversed .serviceIcon {
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .serviceContent {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .brandsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

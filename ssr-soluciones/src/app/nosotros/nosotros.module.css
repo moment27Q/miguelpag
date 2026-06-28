@@ -1,0 +1,300 @@
+.pageHeader {
+  background-color: var(--color-dark);
+  padding: 80px 0 64px;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.pageSubtitle {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+.mvSection {
+  background-color: var(--color-black);
+}
+
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.mvCard {
+  background-color: var(--color-dark);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 48px;
+  border-top: 3px solid var(--color-primary);
+}
+
+.mvLabel {
+  display: block;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.mvText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.75;
+}
+
+.timelineSection {
+  background-color: var(--color-dark);
+}
+
+.timeline {
+  position: relative;
+  margin-top: 48px;
+  padding: 0 0 24px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: rgba(245, 194, 0, 0.25);
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timelineItem::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  left: calc(50% - 5px);
+}
+
+.timelineItem.left {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.timelineItem.right {
+  flex-direction: row;
+  text-align: left;
+}
+
+.timelineYear {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.375rem;
+  color: var(--color-primary);
+  min-width: calc(50% - 40px);
+  flex-shrink: 0;
+}
+
+.timelineItem.left .timelineYear {
+  text-align: left;
+  padding-left: 40px;
+}
+
+.timelineItem.right .timelineYear {
+  text-align: right;
+  padding-right: 40px;
+}
+
+.timelineContent {
+  min-width: calc(50% - 40px);
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  padding-top: 4px;
+}
+
+.timelineItem.left .timelineContent {
+  padding-right: 40px;
+}
+
+.timelineItem.right .timelineContent {
+  padding-left: 40px;
+}
+
+.teamSection {
+  background-color: var(--color-black);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.teamCard {
+  background-color: var(--color-dark);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  transition: border-color var(--transition);
+}
+
+.teamCard:hover {
+  border-color: var(--color-primary);
+}
+
+.teamAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.teamName {
+  font-size: 1.125rem;
+  color: var(--color-white);
+}
+
+.teamRole {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.teamYears {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.valuesSection {
+  background-color: var(--color-dark);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.valueCard {
+  background-color: var(--color-black);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 3px solid var(--color-primary);
+  padding: 32px 24px;
+}
+
+.valueTitle {
+  font-size: 1.125rem;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.valueDesc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+.certsSection {
+  background-color: var(--color-black);
+}
+
+.certsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
+  max-width: 560px;
+}
+
+.certItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 14px 20px;
+  background-color: var(--color-dark);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+}
+
+.certItem svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mvGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timelineItem,
+  .timelineItem.left {
+    flex-direction: column;
+    text-align: left;
+    padding-left: 48px;
+  }
+
+  .timelineItem::after {
+    left: 15px;
+  }
+
+  .timelineYear,
+  .timelineItem.left .timelineYear,
+  .timelineItem.right .timelineYear {
+    text-align: left;
+    padding: 0;
+    min-width: auto;
+  }
+
+  .timelineContent,
+  .timelineItem.left .timelineContent,
+  .timelineItem.right .timelineContent {
+    padding: 0;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}

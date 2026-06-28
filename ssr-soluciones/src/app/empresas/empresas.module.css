@@ -1,0 +1,215 @@
+.b2bServices {
+  background-color: var(--color-dark);
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.serviceCard {
+  background-color: var(--color-black);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color var(--transition);
+}
+
+.serviceCard:hover {
+  border-color: var(--color-primary);
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.serviceTitle {
+  font-size: 1.25rem;
+  color: var(--color-white);
+}
+
+.detail {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background-color: rgba(245, 194, 0, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.serviceDesc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+}
+
+.sectors {
+  background-color: var(--color-black);
+}
+
+.sectorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.sectorCard {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 3px solid var(--color-primary);
+  background-color: var(--color-dark);
+  padding: 32px 24px;
+}
+
+.sectorName {
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.sectorDesc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+.whyBusiness {
+  background-color: var(--color-dark);
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.bulletList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.bulletDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.statsBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.statItem {
+  background-color: var(--color-black);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statValue {
+  font-family: var(--font-display), sans-serif;
+  font-size: 2.75rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ctaSection {
+  background-color: var(--color-primary);
+  padding: 64px 0;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.ctaTitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+
+.ctaSub {
+  font-size: 0.9375rem;
+  color: rgba(10, 10, 10, 0.65);
+}
+
+.ctaSection .ctaInner a {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ctaSection .ctaInner a:hover {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+@media (max-width: 1024px) {
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectorGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ctaInner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsBox {
+    grid-template-columns: 1fr;
+  }
+}

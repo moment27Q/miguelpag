@@ -1,0 +1,52 @@
+.btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background-color: #25D366;
+  color: var(--color-white);
+  border-radius: 50px;
+  padding: 14px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  overflow: hidden;
+  max-width: 56px;
+  transition: max-width 200ms ease, padding 200ms ease, box-shadow var(--transition);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  max-width: 180px;
+  padding: 14px 20px;
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+  color: var(--color-white);
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  opacity: 0;
+  width: 0;
+  transition: opacity 150ms ease 50ms, width 200ms ease;
+  overflow: hidden;
+}
+
+.btn:hover .label {
+  opacity: 1;
+  width: auto;
+  margin-left: 8px;
+}
+
+@media (max-width: 640px) {
+  .btn {
+    bottom: 20px;
+    right: 16px;
+  }
+}
