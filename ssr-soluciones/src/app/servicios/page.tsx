@@ -137,13 +137,18 @@ export default function ServiciosPage() {
           <p className="section-subtitle">
             Instalamos y damos soporte a los líderes mundiales en videovigilancia.
           </p>
-          <div className={styles.brandsGrid}>
-            {BRANDS.map((brand) => (
-              <div key={brand} className={styles.brandCard}>
+        </div>
+        <div className={styles.carouselWrapper}>
+          <div className={styles.carouselTrack}>
+            {[...BRANDS, ...BRANDS, ...BRANDS].map((brand, i) => (
+              <div key={i} className={styles.brandCard}>
+                <span className={styles.brandAccent} />
                 <span className={styles.brandName}>{brand}</span>
               </div>
             ))}
           </div>
+        </div>
+        <div className="container">
           <p className={styles.brandNote}>
             Somos distribuidores e instaladores autorizados. Todos los equipos cuentan con garantía de fábrica.
           </p>

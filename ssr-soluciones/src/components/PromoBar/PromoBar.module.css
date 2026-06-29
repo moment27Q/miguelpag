@@ -1,0 +1,209 @@
+/* ── Keyframes ── */
+
+@keyframes barSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeFromLeft {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeFromRight {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes mainReveal {
+  from { opacity: 0; transform: translateY(10px) scale(0.94); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 30px rgba(245, 194, 0, 0.2); }
+  50%       { text-shadow: 0 0 60px rgba(245, 194, 0, 0.55), 0 0 20px rgba(245, 194, 0, 0.3); }
+}
+
+@keyframes btnFadeIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes borderBreath {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.22); }
+  50%       { border-color: rgba(245, 194, 0, 0.45); }
+}
+
+@keyframes badgeFadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Bar ── */
+.bar {
+  background-color: var(--color-black);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+  overflow: hidden;
+  animation: barSlideDown 0.45s ease both;
+}
+
+.bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.012) 0px,
+    rgba(255, 255, 255, 0.012) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  position: relative;
+}
+
+/* ── Button ── */
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--color-white);
+  padding: 11px 26px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* entrance + continuous breath */
+  animation:
+    btnFadeIn   0.5s ease 0.1s both,
+    borderBreath 4s ease-in-out 1.2s infinite;
+  transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.btn:hover {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary);
+  background-color: rgba(245, 194, 0, 0.05);
+  animation-play-state: paused, paused;
+}
+
+/* ── Center text group ── */
+.textGroup {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.textSide {
+  font-size: clamp(0.65rem, 1.2vw, 0.875rem);
+  color: rgba(255, 255, 255, 0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* left side text slides from left */
+.textGroup .textSide:first-child {
+  animation: fadeFromLeft 0.55s ease 0.25s both;
+}
+
+/* right side text slides from right */
+.textGroup .textSide:last-child {
+  animation: fadeFromRight 0.55s ease 0.4s both;
+}
+
+.textMain {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  white-space: nowrap;
+  /* entrance + continuous glow */
+  animation:
+    mainReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both,
+    glowPulse  3.5s ease-in-out 1s infinite;
+}
+
+/* ── Right badge ── */
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  animation: badgeFadeIn 0.5s ease 0.45s both;
+}
+
+.badgeValue {
+  font-family: var(--font-display), sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .textSide {
+    display: none;
+  }
+
+  .badge {
+    display: none;
+  }
+
+  .textGroup {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  .btn {
+    padding: 9px 18px;
+    font-size: 0.75rem;
+  }
+
+  .textMain {
+    font-size: 1.75rem;
+  }
+}

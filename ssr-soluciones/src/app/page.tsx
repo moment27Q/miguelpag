@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import HomeHero from '@/components/HomeHero/HomeHero'
+import PromoBar from '@/components/PromoBar/PromoBar'
 import StatsBar from '@/components/StatsBar/StatsBar'
 import ServicesGrid from '@/components/ServicesGrid/ServicesGrid'
 import { TESTIMONIALS, PROCESS_STEPS } from '@/lib/constants'
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <PromoBar />
+
       <HomeHero />
 
       <StatsBar />

@@ -105,8 +105,9 @@ export default function EmpresasPage() {
           <h2 className="section-title">Sectores que atendemos</h2>
           <p className="section-subtitle">Experiencia en las principales industrias de Lima y Callao.</p>
           <div className={styles.sectorGrid}>
-            {BUSINESS_SECTORS.map((sector) => (
+            {BUSINESS_SECTORS.map((sector, i) => (
               <div key={sector.name} className={styles.sectorCard}>
+                <span className={styles.sectorNum}>{String(i + 1).padStart(2, '0')}</span>
                 <h3 className={styles.sectorName}>{sector.name}</h3>
                 <p className={styles.sectorDesc}>{sector.description}</p>
               </div>

@@ -174,7 +174,7 @@ export const HOME_PACKAGES: Package[] = [
   },
 ]
 
-export const BRANDS = ['Hikvision', 'Dahua', 'Axis', 'Bosch', 'Hanwha']
+export const BRANDS = ['Hikvision', 'Dahua', 'Axis', 'Bosch', 'Hanwha', 'Cisco', 'Mikrotik']
 
 export const PROCESS_STEPS = [
   {
@@ -204,6 +204,7 @@ export const BUSINESS_SECTORS = [
   { name: 'Industria', description: 'Fábricas, plantas de producción y zonas industriales.' },
   { name: 'Oficinas', description: 'Torres empresariales, coworkings y sedes corporativas.' },
   { name: 'Almacenes', description: 'Depósitos, centros logísticos y bodegas.' },
+  { name: 'Minas', description: 'Operaciones mineras, campamentos y zonas de extracción.' },
 ]
 
 export const TIMELINE = [

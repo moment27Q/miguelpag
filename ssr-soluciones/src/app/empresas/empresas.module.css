@@ -58,7 +58,7 @@
 
 .sectorGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2px;
   margin-top: 48px;
 }
@@ -67,17 +67,34 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-top: 3px solid var(--color-primary);
   background-color: var(--color-dark);
-  padding: 32px 24px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.sectorCard:hover {
+  border-color: rgba(245, 194, 0, 0.35);
+  background-color: rgba(245, 194, 0, 0.03);
+}
+
+.sectorNum {
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0.6;
+  letter-spacing: 0.12em;
 }
 
 .sectorName {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--color-white);
-  margin-bottom: 10px;
 }
 
 .sectorDesc {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.5);
   line-height: 1.6;
 }
@@ -186,7 +203,7 @@
   }
 
   .sectorGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .whyGrid {
@@ -206,7 +223,13 @@
   }
 
   .sectorGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectorCard:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 1px);
+    justify-self: center;
   }
 
   .statsBox {

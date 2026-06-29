@@ -101,38 +101,78 @@
   background-color: var(--color-dark);
 }
 
-.brandsGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
+.carouselWrapper {
+  overflow: hidden;
   margin-top: 48px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: brandScroll 28s linear infinite;
+}
+
+.carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brandScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% / 3)); }
 }
 
 .brandCard {
   background-color: var(--color-black);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 36px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 32px 52px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: border-color var(--transition), background-color var(--transition);
+  gap: 10px;
+  flex-shrink: 0;
+  transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
+  cursor: default;
 }
 
 .brandCard:hover {
   border-color: var(--color-primary);
-  background-color: rgba(245, 194, 0, 0.04);
+  background-color: rgba(245, 194, 0, 0.05);
+  transform: translateY(-3px);
+}
+
+.brandAccent {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  opacity: 0.5;
+  transition: opacity var(--transition), width var(--transition);
+}
+
+.brandCard:hover .brandAccent {
+  opacity: 1;
+  width: 36px;
 }
 
 .brandName {
   font-family: var(--font-display), sans-serif;
-  font-size: 1.375rem;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 0.06em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
   transition: color var(--transition);
 }
 
 .brandCard:hover .brandName {
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .brandNote {
@@ -172,11 +212,6 @@
   color: var(--color-white);
 }
 
-@media (max-width: 1024px) {
-  .brandsGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
   .serviceRow,
@@ -202,8 +237,3 @@
   }
 }
 
-@media (max-width: 640px) {
-  .brandsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
