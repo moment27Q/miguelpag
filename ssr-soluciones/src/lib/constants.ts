@@ -127,7 +127,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const CONTACT_INFO: ContactInfo = {
   phone: '+51 927 199 798',
   whatsapp: '51927199798',
-  email: 'contacto@ssrsoluciones.pe',
+  email: 'soporte@ssrsoluciones.pe',
   hours: 'Lun - Sáb: 8:00am - 7:00pm',
   address: 'Lima Metropolitana y Callao',
 }
