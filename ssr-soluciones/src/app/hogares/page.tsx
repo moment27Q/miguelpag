@@ -86,17 +86,17 @@ export default function HogaresPage() {
               {
                 title: 'Alarmas y Sensores',
                 desc: 'Detectores de movimiento, contactos magnéticos en puertas y ventanas, sirena con aviso al celular.',
-                image: '/servicio2.jpeg',
+                image: '/residencial1.png',
               },
               {
                 title: 'Monitoreo Residencial',
                 desc: 'Nuestra central monitorea tu hogar 24 horas. Ante cualquier alerta, coordinamos la respuesta.',
-                image: '/servicio3.jpeg',
+                image: '/servicio4.jpeg',
               },
               {
                 title: 'Almacenamiento en Nube',
                 desc: 'Grabación continua con backup en la nube y disco local. Tus videos siempre seguros.',
-                image: '/servicio4.jpeg',
+                image: '/nube.png',
               },
             ].map((s) => (
               <div key={s.title} className={styles.serviceCard}>

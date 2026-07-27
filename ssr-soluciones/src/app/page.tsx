@@ -41,7 +41,7 @@ export default function HomePage() {
             </div>
             {/* Card 2 */}
             <div className={`${styles.bentoCard} ${styles.bentoSmall}`}>
-              <Image src="/servicio3.jpeg" alt="Monitoreo 24/7" fill className={styles.bentoImg} sizes="30vw" />
+              <Image src="/camara.png" alt="Monitoreo 24/7" fill className={styles.bentoImg} sizes="30vw" />
               <div className={styles.bentoDark} />
               <div className={styles.bentoText}>
                 <p className={styles.bentoCopy}><strong className={styles.bentoAccent}>Te cuidamos</strong> las 24 horas del día</p>
